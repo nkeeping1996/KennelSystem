@@ -7,7 +7,7 @@ public class Owner{
     private String name;
     private String address;
     private String number;
-    private Pet pet;
+    private ArrayList<Pet> pets = new ArrayList<Pet>();
 
 
     //Constructor
@@ -27,8 +27,8 @@ public class Owner{
     public String getNumber(){
         return this.number;
     }
-    public Pet getPet(){
-        return this.pet;
+    public ArrayList<Pet> getPet(){
+        return this.pets;
     }
 
     //Setter Methods
@@ -41,8 +41,8 @@ public class Owner{
     public void setNumber(String number){
         this.number = number;
     }
-    public void setPet(Pet pet){
-        this.pet = pet;
+    public void addPet(Pet pet){
+        this.pets.add(pet);
     }
 
     //Registration Method

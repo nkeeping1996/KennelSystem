@@ -7,11 +7,11 @@ class Main {
 
         //Owner owner = ui.greeting(ken);
         Owner owner = new Owner("Nikki", "28 Richard Rd", "1112224444");
+        ken.addOwner(owner);
         Pet telly = new Cat("Telly");
-        owner.setPet(telly);
+        owner.addPet(telly);
         telly.setMealsPerDay(3);
         telly.setWalksPerDay(1);
-
 
         String purpose = ui.getPurpose();
         if(purpose.equals("1")){

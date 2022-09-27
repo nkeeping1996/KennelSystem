@@ -43,14 +43,11 @@ public class UserInterface {
     }
 
     public void checkOn(Kennel ken, Owner owner){
-        for(Map.Entry<Owner, Pet> entry : ken.getRegistered().entrySet()){
-            if(entry.getKey()==owner){
-                Pet pet = owner.getPet();
-                System.out.println(pet.getName() + " is doing great!");
-                System.out.println(pet.getName() + " has eaten " + pet.getTimesFedToday() + " times today");
-                System.out.println(pet.getName() + " has walked " + pet.getTimesWalkedToday() + " times today");
-                System.out.println(pet.getName() + " has missed you, but they're having a fun time while you're gone.");
-            }
+        for(Pet pet : owner.getPet()){
+            System.out.println(pet.getName() + " is doing great!");
+            System.out.println(pet.getName() + " has eaten " + pet.getTimesFedToday() + " times today");
+            System.out.println(pet.getName() + " has walked " + pet.getTimesWalkedToday() + " times today");
+            System.out.println(pet.getName() + " has missed you, but they're having a fun time while you're gone.");
         }
     }
 
