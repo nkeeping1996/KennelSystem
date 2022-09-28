@@ -29,9 +29,10 @@ public class UserInterface {
         System.out.println("1. Drop off a pet.");
         System.out.println("2. Pick up a pet.");
         System.out.println("3. Check on pet.");
+        System.out.println("0. Exit the program.");
         String selection = scanner.next();
-        while(!selection.equals("1") && !selection.equals("2") && !selection.equals("3")){
-            System.out.println("Sorry, that was not a valid response. Please enter 1 or 2:");
+        while(!selection.equals("1") && !selection.equals("2") && !selection.equals("3")&&!selection.equals("0")){
+            System.out.println("Sorry, that was not a valid response. Please enter 1, 2, 3, or 0:");
             selection = scanner.next();
         }
         return selection;
@@ -72,6 +73,7 @@ public class UserInterface {
             else{
                 System.out.println("Welcome back to the kennel, " + dog.getName());
             }
+            getPetInfo(dog);
         }
         else{
             Cat cat = new Cat(name);
@@ -82,7 +84,19 @@ public class UserInterface {
             else{
                 System.out.println("Welcome back to the kennel, " + cat.getName());
             }
+            getPetInfo(cat);
         }
+    }
+
+    public void getPetInfo(Pet pet){
+        System.out.println("How many times will " + pet.getName() + " need to be fed today?");
+        Scanner scanner = new Scanner(System.in);
+        int timesFed = scanner.nextInt();
+        pet.setMealsPerDay(timesFed);
+        System.out.println("How many times will " + pet.getName() + " need to be walked today?");
+        int timesWalked = scanner.nextInt();
+        pet.setWalksPerDay(timesWalked);
+        System.out.println(pet.getName() + " will be fed " + timesFed + " and walked " + timesWalked + " a day!");
     }
 
 }
