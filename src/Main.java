@@ -25,24 +25,30 @@ class Main {
 //        charlie.feedPet();
 
 
-        String purpose = ui.getPurpose();
-        while(purpose!="0") {
-            if (purpose.equals("1")) {
-                ui.checkIn(ken, owner);
+        boolean endOfDay = false;
+        while (!endOfDay) {
+            String purpose = ui.getPurpose();
+            while (purpose != "0") {
+                if (purpose.equals("1")) {
+                    ui.checkIn(ken, owner);
+                } else if (purpose.equals("2")) {
+                    ui.checkOut(ken, owner);
+                } else if (purpose.equals("3")) {
+                    ui.checkOn(ken, owner);
+                } else if (purpose.equals("0")) {
+                    break;
+                } else {
+                    System.out.println("Sorry, not a valid option");
+                }
+                purpose = ui.getPurpose();
             }
-            else if (purpose.equals("2")) {
-                ui.checkOut(ken, owner);
-            } else if (purpose.equals("3")) {
-                ui.checkOn(ken, owner);
+            endOfDay = ui.endOfDay();
+            if(!endOfDay){
+                System.out.println("Alright, next customer!");
             }
-            else if (purpose.equals("0")){
-                break;
-            }
-            else{
-                System.out.println("Sorry, not a valid option");
-            }
-            purpose = ui.getPurpose();
         }
+
+        System.out.println("Thanks to all who visited the kennel today! Goodnight.");
 
     }
 

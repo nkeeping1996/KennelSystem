@@ -99,4 +99,18 @@ public class UserInterface {
         System.out.println(pet.getName() + " will be fed " + timesFed + " and walked " + timesWalked + " a day!");
     }
 
+    public boolean endOfDay(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Is it the end of the day yet? Enter Y for Yes and N for No");
+        String response = scanner.next();
+        while(!response.toLowerCase().equals("y") && !response.toLowerCase().equals("n")){
+            System.out.println("Sorry, not a valid response. Enter Y for Yes and N for No");
+            response = scanner.next();
+        }
+        if(response.toLowerCase().equals("y")){
+            return true;
+        }
+        return false;
+    }
+
 }
