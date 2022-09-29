@@ -114,6 +114,10 @@ public class Kennel{
         return false;
     }
 
+    public boolean isFull(){
+        return false;
+    }
+
     public void addOwner(Owner owner){
         this.getOwners().add(owner);
     }

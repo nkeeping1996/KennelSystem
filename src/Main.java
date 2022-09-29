@@ -6,6 +6,7 @@ class Main {
         UserInterface ui = new UserInterface();
 
         Owner owner = ui.greeting(ken);
+        ken.s
 //        Owner owner = new Owner("Nikki", "28 Richard Rd", "1112224444");
 //        ken.addOwner(owner);
 //        Pet telly = new Cat("Telly");
@@ -30,14 +31,18 @@ class Main {
             String purpose = ui.getPurpose();
             while (purpose != "0") {
                 if (purpose.equals("1")) {
-                    ui.checkIn(ken, owner);
-                } else if (purpose.equals("2")) {
+                    ui.checkIn(ken);
+                }
+                else if (purpose.equals("2")) {
                     ui.checkOut(ken, owner);
-                } else if (purpose.equals("3")) {
+                }
+                else if (purpose.equals("3")) {
                     ui.checkOn(ken, owner);
-                } else if (purpose.equals("0")) {
+                }
+                else if (purpose.equals("0")) {
                     break;
-                } else {
+                }
+                else {
                     System.out.println("Sorry, not a valid option");
                 }
                 purpose = ui.getPurpose();
