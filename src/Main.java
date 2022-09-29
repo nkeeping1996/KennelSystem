@@ -6,7 +6,7 @@ class Main {
         UserInterface ui = new UserInterface();
 
         Owner owner = ui.greeting(ken);
-        ken.s
+        ken.setCratesFull(6);
 //        Owner owner = new Owner("Nikki", "28 Richard Rd", "1112224444");
 //        ken.addOwner(owner);
 //        Pet telly = new Cat("Telly");

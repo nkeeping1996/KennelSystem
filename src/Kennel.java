@@ -24,6 +24,7 @@ public class Kennel{
     public int getCratesFull(){
         return this.cratesFull;
     }
+    public void setCratesFull(int cratesFull){this.cratesFull=cratesFull;}
     public Crate[] getCrates(){
         return this.Crates;
     }
@@ -115,6 +116,9 @@ public class Kennel{
     }
 
     public boolean isFull(){
+        if(this.cratesFull == Crates.length){
+            return true;
+        }
         return false;
     }
 
