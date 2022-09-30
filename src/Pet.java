@@ -12,6 +12,8 @@ public abstract class Pet{
     private int timesFedToday;
     private int timesWalkedToday;
 
+    private boolean friendly;
+
     //Constructor
     public Pet(String name){
         this.name = name;
@@ -34,6 +36,9 @@ public abstract class Pet{
     }
     public void setExitDay(int exitDay){
         this.exitDay = exitDay;
+    }
+    public void setFriendly(boolean friendly){
+        this.friendly = friendly;
     }
 
     //Getter Methods

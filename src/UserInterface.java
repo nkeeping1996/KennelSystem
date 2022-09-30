@@ -104,7 +104,32 @@ public class UserInterface {
         System.out.println("How many times will " + pet.getName() + " need to be walked today?");
         int timesWalked = scanner.nextInt();
         pet.setWalksPerDay(timesWalked);
+        boolean friendly = getFriendly(pet);
+        pet.setFriendly(friendly);
+        System.out.println();
         System.out.println(pet.getName() + " will be fed " + timesFed + " and walked " + timesWalked + " a day!");
+    }
+
+    public boolean getFriendly(Pet pet){
+        Scanner scanner = new Scanner(System.in);
+        if(pet.getBreed().equals("Dog")){
+            System.out.println("Finally, is your dog cat-friendly?");
+            String response = scanner.next();
+            if(response.toLowerCase().equals("y")){
+                System.out.println("Great, thank you for letting us know!");
+                return true;
+            }
+            System.out.println("Thank you for letting us know! We will not put them near any cats.");
+            return false;
+        }
+        System.out.println("Finally, is your cat dog-friendly?");
+        String response = scanner.next();
+        if(response.toLowerCase().equals("y")){
+            System.out.println("Great, thank you for letting us know!");
+            return true;
+        }
+        System.out.println("Thank you for letting us know! We will not put them near any dogs.");
+        return false;
     }
 
     public boolean endOfDay(){
