@@ -32,7 +32,7 @@ class Main {
             String purpose = ui.getPurpose();
             while (purpose != "0") {
                 if (purpose.equals("1")) {
-                    ui.checkIn(ken);
+                    ui.checkIn(ken, owner);
                 }
                 else if (purpose.equals("2")) {
                     ui.checkOut(ken, owner);

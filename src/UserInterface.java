@@ -52,12 +52,11 @@ public class UserInterface {
         }
     }
 
-    public void checkIn(Kennel ken){
+    public void checkIn(Kennel ken, Owner owner){
         if(ken.isFull()){
             System.out.println("Sorry, the kennel is full today! Please come back another time.");
             return;
         }
-        Owner owner = greeting(ken);
         if(!ken.getRegistered().containsKey(owner)){
             ken.addOwner(owner);
         }
