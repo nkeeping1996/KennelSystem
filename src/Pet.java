@@ -3,7 +3,7 @@
 public abstract class Pet{
     //Instance variables
     private String name;
-    private String breed;
+    private String species;
     private String owner;
     private int mealsPerDay;
     private int walksPerDay;
@@ -22,9 +22,6 @@ public abstract class Pet{
     }
 
     //Setter Methods
-    public void setBreed(String breed){
-        this.breed = breed;
-    }
     public void setMealsPerDay(int mealsPerDay){
         this.mealsPerDay = mealsPerDay;
     }
@@ -45,9 +42,7 @@ public abstract class Pet{
     public String getName(){
         return this.name;
     }
-    public String getBreed(){
-        return this.breed;
-    }
+    public abstract String getBreed();
     public int getMealsPerDay(){
         return this.mealsPerDay;
     }

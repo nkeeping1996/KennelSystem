@@ -6,6 +6,11 @@ public class Dog extends Pet{
         super(name);
     }
 
+    @Override
+    public String getBreed() {
+        return "Dog";
+    }
+
     //pet method
     @Override
     public void giveAffection(){
