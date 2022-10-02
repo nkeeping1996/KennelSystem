@@ -5,8 +5,8 @@ class Main {
         Kennel ken = new Kennel();
         UserInterface ui = new UserInterface();
 
-        Owner owner = ui.greeting(ken);
-        ken.setCratesFull(6);
+
+        //ken.setCratesFull(6);
 //        Owner owner = new Owner("Nikki", "28 Richard Rd", "1112224444");
 //        ken.addOwner(owner);
 //        Pet telly = new Cat("Telly");
@@ -28,6 +28,7 @@ class Main {
 
         boolean endOfDay = false;
         while (!endOfDay) {
+            Owner owner = ui.greeting(ken);
             String purpose = ui.getPurpose();
             while (purpose != "0") {
                 if (purpose.equals("1")) {
