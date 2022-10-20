@@ -1,13 +1,15 @@
 
+import java.util.HashSet;
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Set;
 
 public class Owner{
     //Instance variables
     private String name;
     private String address;
     private String number;
-    private ArrayList<Pet> pets = new ArrayList<Pet>();
+    private Set<Pet> pets = new HashSet<Pet>();
 
 
     //Constructor
@@ -27,7 +29,7 @@ public class Owner{
     public String getNumber(){
         return this.number;
     }
-    public ArrayList<Pet> getPet(){
+    public Set<Pet> getPet(){
         return this.pets;
     }
 
@@ -43,6 +45,13 @@ public class Owner{
     }
     public void addPet(Pet pet){
         this.pets.add(pet);
+    }
+
+    public boolean petLogged(Pet pet){
+        if(this.getPet().contains(pet)){
+            return true;
+        }
+        return false;
     }
 
     //Registration Method
