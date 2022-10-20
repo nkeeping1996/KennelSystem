@@ -81,6 +81,7 @@ public class UserInterface {
                 System.out.println("Welcome back to the kennel, " + dog.getName());
             }
             getPetInfo(dog);
+            owner.addPet(dog);
         }
         else{
             Cat cat = new Cat(name);
@@ -92,6 +93,7 @@ public class UserInterface {
                 System.out.println("Welcome back to the kennel, " + cat.getName());
             }
             getPetInfo(cat);
+            owner.addPet(cat);
         }
     }
 
