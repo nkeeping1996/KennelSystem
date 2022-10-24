@@ -28,29 +28,28 @@ class Main {
 
         boolean endOfDay = false;
         while (!endOfDay) {
-            Owner owner = ui.greeting(ken);
-            String purpose = ui.getPurpose();
-            while (purpose != "0") {
-                if (purpose.equals("1")) {
-                    ui.checkIn(ken, owner);
+            int user = ui.customerOrEmployee();
+            if(user==1) {
+                Owner owner = ui.greeting(ken);
+                String purpose = ui.getPurpose();
+                while (purpose != "0") {
+                    if (purpose.equals("1")) {
+                        ui.checkIn(ken, owner);
+                    } else if (purpose.equals("2")) {
+                        ui.checkOut(ken, owner);
+                    } else if (purpose.equals("3")) {
+                        ui.checkOn(ken, owner);
+                    } else if (purpose.equals("0")) {
+                        break;
+                    } else {
+                        System.out.println("Sorry, not a valid option");
+                    }
+                    purpose = ui.getPurpose();
                 }
-                else if (purpose.equals("2")) {
-                    ui.checkOut(ken, owner);
-                }
-                else if (purpose.equals("3")) {
-                    ui.checkOn(ken, owner);
-                }
-                else if (purpose.equals("0")) {
-                    break;
-                }
-                else {
-                    System.out.println("Sorry, not a valid option");
-                }
-                purpose = ui.getPurpose();
             }
             endOfDay = ui.endOfDay();
             if(!endOfDay){
-                System.out.println("Alright, next customer!");
+                System.out.println("Alright, next user!");
             }
         }
 

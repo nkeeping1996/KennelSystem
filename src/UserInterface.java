@@ -43,6 +43,17 @@ public class UserInterface {
         ;
     }
 
+    public int customerOrEmployee(){
+        System.out.println("Are you accessing the terminal as a customer (1) or as an employee (2)?");
+        Scanner scanner = new Scanner(System.in);
+        int response = scanner.nextInt();
+        while(response!=1 &&response!= 2){
+            System.out.println("Sorry; please enter '1' for customer or '2' for employee.");
+            response = scanner.nextInt();
+        }
+        return response;
+    }
+
     public void checkOn(Kennel ken, Owner owner){
         for(Pet pet : owner.getPet()){
             System.out.println(pet.getName() + " is doing great!");
