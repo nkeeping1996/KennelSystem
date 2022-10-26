@@ -47,6 +47,24 @@ class Main {
                     purpose = ui.getPurpose();
                 }
             }
+            else{
+                String purpose = ui.getPurposeEmployee();
+                while(purpose != "0"){
+                    if(purpose.equals("1")){
+                        ui.feedPets(ken);
+                    }
+                    else if(purpose.equals("2")){
+                        ui.walkPets(ken);
+                    }
+                    else if(purpose.equals("3")){
+                        ui.sayHi();
+                    }
+                    else if(purpose.equals("0")){
+                        break;
+                    }
+                    purpose = ui.getPurposeEmployee();
+                }
+            }
             endOfDay = ui.endOfDay();
             if(!endOfDay){
                 System.out.println("Alright, next user!");

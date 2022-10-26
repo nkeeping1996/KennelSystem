@@ -38,6 +38,20 @@ public class UserInterface {
         return selection;
     }
 
+    public String getPurposeEmployee(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("What job would you like to do?");
+        System.out.println("1. Feed pets.");
+        System.out.println("2. Walk pets.");
+        System.out.println("3. Just say 'hi' to everyone!");
+        System.out.println("0. Exit the program.");
+        String selection = scanner.next();
+        while(!selection.equals("1") && !selection.equals("2") && !selection.equals("3")&&!selection.equals("0")){
+            System.out.println("Sorry, that was not a valid response. Please enter 1, 2, 3, or 0:");
+            selection = scanner.next();
+        }
+        return selection;
+    }
 
     public void checkOut(Kennel ken, Owner owner){
         ;
@@ -146,6 +160,31 @@ public class UserInterface {
         }
         System.out.println("Thank you for letting us know! We will not put them near any dogs.");
         return false;
+    }
+
+    public void feedPets(Kennel ken){
+        for(Owner o : ken.getOwners()){
+            for(Pet p : o.getPet()){
+                if(!p.isFull()){
+                    p.feedPet();
+                }
+            }
+        }
+    }
+
+    public void walkPets(Kennel ken){
+        for(Owner o : ken.getOwners()){
+            for(Pet p : o.getPet()){
+                if(!p.isTired()){
+                    p.walkPet();
+                }
+            }
+        }
+    }
+
+    public void sayHi(){
+        System.out.println("You walk down the aisles and say a sweet 'hello' to all the fuzzy faces.");
+        System.out.println("You receive plenty of tail wags and purring! :)");
     }
 
     public boolean endOfDay(){
