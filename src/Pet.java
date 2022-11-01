@@ -61,6 +61,7 @@ public abstract class Pet{
     public int getTimesWalkedToday(){
         return this.timesWalkedToday;
     }
+    public boolean getFriendly() { return this.friendly;}
 
     //Feeder Method
     public boolean feedPet(){
@@ -118,10 +119,15 @@ public abstract class Pet{
     }
 
     public abstract void giveAffection();
-    public abstract void setCrate();
 
-    public abstract void setCrate(Kennel ken, int crateInt);
+    public void setCrate(Kennel ken, int crateInt){
+        if(canCrate(crateInt, ken)){
+            ken.getCrates()[crateInt].setPet(this);
+            ken.getCrates()[crateInt].setOccupied(true);
+        }
+    }
 
+    public abstract boolean canCrate(int crateID, Kennel ken);
 
     //Return pet by crateID
 
