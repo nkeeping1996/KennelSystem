@@ -17,4 +17,17 @@ public class Dog extends Pet{
         System.out.println("You pet the dog; the dog wags his tail");
     }
 
+    @Override
+    public void setCrate() {
+
+    }
+
+    @Override
+    public void setCrate(Kennel ken, int crateInt){
+        if(ken.getCrates()[crateInt]!=null){
+            ken.getCrates()[crateInt].setPet(this);
+            ken.getCrates()[crateInt].setOccupied(true);
+        }
+    }
+
 }

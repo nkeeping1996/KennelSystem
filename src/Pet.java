@@ -118,6 +118,10 @@ public abstract class Pet{
     }
 
     public abstract void giveAffection();
+    public abstract void setCrate();
+
+    public abstract void setCrate(Kennel ken, int crateInt);
+
 
     //Return pet by crateID
 
